@@ -58,7 +58,7 @@ body {
 }
 
 .anim-panel-toggle {
-  width: 20px;
+  width: auto;
   height: 20px;
   position: absolute;
   top: 0;
@@ -67,8 +67,8 @@ body {
   padding: 5px;
 
   .cog {
-    width: auto;
-    height: auto;
+    width: 1.5em;
+    height: 1.5em;
   }
 }
 

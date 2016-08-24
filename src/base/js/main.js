@@ -101,7 +101,7 @@ Preview.prototype._onClick = function(e) {
 Preview.prototype._animPanel = function(e) {
   var _this = this;
   e.preventDefault();
-  e.target.style.display = 'none';
+  this.animPanelToggle.style.display = 'none';
   var banner = _this.iframe.contentWindow.banner;
   new AnimPanel(banner.timeline);
 };

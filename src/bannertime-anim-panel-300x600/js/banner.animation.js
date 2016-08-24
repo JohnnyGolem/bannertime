@@ -61,7 +61,7 @@ Banner.prototype.createElements = function () {
     width: this.bannerWidth,
     height: 60,
     parent: this.banner
-  })
+  });
 
   this.circle = this.smartObject({
     backgroundImage: 'images/circle.png',
@@ -92,7 +92,7 @@ Banner.prototype.setup = function () {
   this.copyC.set({ left: 30, top: 190 });
   this.logo.centerHorizontal();
   this.logo.set({ top: 270 });
-  this.shapesContainer.set({ top: 420 })
+  this.shapesContainer.set({ top: 420 });
   this.circle.set({ left: 38 });
   this.triangle.centerHorizontal();
   this.square.set({ left: 202 });
@@ -128,6 +128,6 @@ Banner.prototype.animate = function () {
     .to(this.shapesContainer, 1.5, { rotation: 360, ease: Power3.easeInOut }, 'outro')
     .to(this.circle, 1, { y: 200, ease: Power4.easeInOut }, 'outro')
     .to(this.square, 1, { y: -200, ease: Power4.easeInOut }, 'outro')
-    .to([this.circle, this.square], 0.5, { y: 0, ease: Power3.easeOut }, 'outro+=1')
+    .to([this.circle, this.square], 0.5, { y: 0, ease: Power3.easeOut }, 'outro+=1');
 
 };

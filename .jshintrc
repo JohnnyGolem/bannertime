@@ -26,6 +26,7 @@
     "dhtml": true,
     "FT": true,
     "myFT": true,
+    "AnimPanel": true,
     "TimelineLite": false,
     "TimelineMax": false,
     "TweenLite": false,

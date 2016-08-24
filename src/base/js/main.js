@@ -88,6 +88,11 @@ Preview.prototype._onClick = function(e) {
   this.iframe.src = e.target.href;
   TweenLite.set('.iframe iframe', {autoAlpha: 0});
   TweenLite.set('.loading', {display: 'block', autoAlpha: 1});
+  if (this.animPanelToggle.style.display === 'none') {
+    var animPanel = document.querySelector('.anim-panel');
+    document.body.removeChild(animPanel);
+    this.animPanelToggle.style.display = 'block';
+  }
   setTimeout(function() {
     var banner = _this.iframe.contentWindow.document.querySelector('.banner');
     if (banner) {
@@ -101,9 +106,11 @@ Preview.prototype._onClick = function(e) {
 Preview.prototype._animPanel = function(e) {
   var _this = this;
   e.preventDefault();
-  this.animPanelToggle.style.display = 'none';
   var banner = _this.iframe.contentWindow.banner;
-  new AnimPanel(banner.timeline);
+  if (typeof banner.timeline === 'object') {
+    this.animPanelToggle.style.display = 'none';
+    new AnimPanel(banner.timeline);
+  }
 };
 
 document.addEventListener('DOMContentLoaded', function () {
